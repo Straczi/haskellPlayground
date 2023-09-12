@@ -22,7 +22,7 @@ downside : long runtime :(
            -> my fix for now: put the whole call to the function in brackets so you know it belongs together-}
 
 fakul2 n = (fakulAkku n 1)
-            where fakulAkku n akku  = if n==0 then akku else ( fakulAkku (n-1) (n * akku) )
+            where fakulAkku n akku = if n==0 then akku else ( fakulAkku (n-1) (n * akku) )
 
 
 {-

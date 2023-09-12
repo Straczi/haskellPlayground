@@ -13,7 +13,7 @@ OR:
     ./<name>
 -}
 
---Int : signed 64bit Integer ranging -2^63 to 2^63
+--Int : signed 64bit Integer ranging -2^29 to 2^29
 -- Integer : Integer that takes as much memory as it needs
 -- Float
 -- Double 
