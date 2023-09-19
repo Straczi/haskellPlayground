@@ -8,7 +8,7 @@ Operations:
         -> returns true if list is empty
     [ head | last ] <list>
         -> returns first | last element
-        -> throws exception if list is empty
+        -> throws exception if list is emptyy
 -}
 
 s :: [Int]
