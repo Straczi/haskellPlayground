@@ -32,3 +32,4 @@ rev toBeReversed  = revList toBeReversed []
 
 rev2 :: [a] -> [a]
 rev2 toBeReversed = if null toBeReversed then [] else (last toBeReversed):(rev2 (init toBeReversed))
+ 
