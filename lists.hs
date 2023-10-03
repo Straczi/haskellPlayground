@@ -22,14 +22,6 @@ isStringCharArray :: Bool
 isStringCharArray = "Haskell" == ['H', 'a', 's', 'k', 'e', 'l', 'l']
 
 rev :: [a] -> [a]
-rev toBeReversed  = revList toBeReversed []
-                    where revList toBeReversed reversedList = if null toBeReversed 
-                                                                then 
-                                                                    reversedList 
-                                                                else 
-                                                                    revList (tail toBeReversed) (head toBeReversed:reversedList)
-
-
-rev2 :: [a] -> [a]
-rev2 toBeReversed = if null toBeReversed then [] else (last toBeReversed):(rev2 (init toBeReversed))
+rev [] = []
+rev toBeReversed = (last toBeReversed):(rev (init toBeReversed))
  

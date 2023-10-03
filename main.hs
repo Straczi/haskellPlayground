@@ -6,14 +6,14 @@ import System.IO
 Running a file:
     ghci
     :l <name>   (load)
-    :r          (compile and run, must re-run command every change)
+    :r          (reload)
 
 OR:
     ghc <name>.hs    (compiles the file)
     ./<name>
 -}
 
---Int : signed 64bit Integer ranging -2^29 to 2^29
+--Int : signed 32bit Integer ranging -2^29 to 2^29
 -- Integer : Integer that takes as much memory as it needs
 -- Float
 -- Double 
