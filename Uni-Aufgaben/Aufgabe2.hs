@@ -75,13 +75,13 @@ convertIbanToInt :: [Char] -> Integer
 convertIbanToInt str = read str
 
 getCountryCode :: [Char] -> [Char]
-getCountryCode str = head str: (head (tail str):[])
+getCountryCode str = take 2 str 
 
 getBBAN :: [Char] -> [Char]
-getBBAN str = tail( tail (tail ( tail str)))
+getBBAN str = drop 4 str
 
 getCheckNumber :: [Char] -> [Char]
-getCheckNumber str = head (tail(tail str)) :(head (tail(tail(tail str))):[]) 
+getCheckNumber str =  take 2 (drop 2 str)
 
 encodeCountryCode :: [Char] -> [Char]
 encodeCountryCode [] = []
