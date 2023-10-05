@@ -25,7 +25,7 @@ Aufgabe 2-1:
 5.
     snd (\a b -> a + b, (+)) :: Num a => a -> a -> a
 
-    Adds two numbers
+    snd liefert das zweite Element eines Tupels, es wird also nur (+) geliefert
 
 6.
     [x ^ 2 | x <- reverse [1..10]] :: (Num a, Enum a) => [a]
@@ -82,10 +82,12 @@ getBBAN str = drop 4 str
 
 getCheckNumber :: [Char] -> [Char]
 getCheckNumber str =  take 2 (drop 2 str)
+-- alt: getCheckNumber str = [str!!2, str!!3]
 
 encodeCountryCode :: [Char] -> [Char]
 encodeCountryCode [] = []
 encodeCountryCode str = show (ord(head str) - (ord 'A') +10) ++ encodeCountryCode (tail str)
+-- Alternativ kann man statt ord auch fromEnum benutzen! -> dann brauch man den Import nicht
 
 evaluateIBAN :: [Char] -> Bool
 evaluateIBAN str = (convertIbanToInt( (getBBAN str) ++ (encodeCountryCode (getCountryCode str)) ++ (getCheckNumber str) )) `mod` 97 == 1
