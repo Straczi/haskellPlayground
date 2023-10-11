@@ -1,14 +1,9 @@
-import Data.Ratio
+w1 = 2
 
-r = 5%7
+f:: Double -> Double
+f x = x*2
 
-x =4
+isPrime 2 = False
+isPrime p = null [1 | a <-[2..(p-1)], p `mod` a == 0] 
 
---let:
-f:: Int
-f = let a = 5
-        b = 6
-    in a*b
-
-
-
+primes = 2:[a| a<-[3..], isPrime a]
