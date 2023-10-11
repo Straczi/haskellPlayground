@@ -37,3 +37,20 @@ nospace str = let res = [c| c <- str , c /= ' '] in (res ,toInteger((length str)
 -- Aufgabe 3-4 
 
 input = [1,-5,3,0,11,3,25,100,7]
+
+-- a) Liste, die alle Elemente der Liste input enthält, welche im Intervall [1,7] liegen.
+aList = [a| a<- input, a<=1, a>=7] 
+
+-- b) Liste aller Zahlen von 1 bis 100, die durch 6 teilbar sind und mit 2 subtrahiert durch 4 teilbar
+-- sind.
+bList = [a | a<-[1..100], a `mod` 6 ==0, (a-2)`mod`4 ==0]
+
+-- c) Liste, die die quadrierten Elemente von input enthält, die größer als 100 und ungerade sind.
+cList = [a*a | a<- input, a*a >100, (a*a)`mod`2 /= 0]
+
+-- d) Liste, die alle Elemente aus input, die auch in a) sind, mit True und alle, die nicht in a) sind,
+-- mit False ersetzt.
+dList = []
+
+-- e) Anzahl der Zahlen von b), die durch 5 teilbar sind, wenn man 1 von ihnen subtrahiert.
+eNum = length [a| a <- bList, (a-1) `mod` 2 == 0]
