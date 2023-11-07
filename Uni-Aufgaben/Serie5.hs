@@ -1,3 +1,5 @@
+module Serie5 where
+
 isMonotonous :: Ord a => [a] -> Bool
 isMonotonous [] = True
 isMonotonous [a] = True
@@ -10,8 +12,8 @@ monotoneFolge = [1,2,3,4,5]
 
 
 isAlternating :: (Ord a, Num a) => [a] -> Bool
-isAlternating [] = False
-isAlternating [a] = False
+isAlternating [] = True
+isAlternating [a] = True
 isAlternating l = (l!!0 * l!!1 < 0) && ( length l == 2 || isAlternating (tail l) )
 
 alternierendeFolge :: [Integer]
