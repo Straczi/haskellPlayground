@@ -19,7 +19,7 @@ printAuto Auto{bezeichnung=bez, preis=pri, alter=age, besitzer=bes} =
 
 
 collectionWorth :: Person -> [Auto] -> Int
-collectionWorth owner carList = foldr1 (+) [preis a | a <- carList, besitzer a == owner]
+collectionWorth owner carList = sum [preis a | a <- carList, besitzer a == owner]
 
 
 oldtimers:: [Auto] -> [Auto]
